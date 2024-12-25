@@ -1,20 +1,26 @@
-import { useState , useEffect} from "react";
+import { useState, useEffect } from "react";
 
 function App() {
+  let [counterValue, setCounter] = useState(true);
+  useEffect(function () {
+    setInterval(function () {
+      setCounter(counterValue => !counterValue);
+    }, 5000);
+  }, []);
   return <div>
-    <Counter></Counter>
+    {counterValue && <Counter></Counter>}
   </div>
 }
 function Counter() {
   // let count=0;
   const [count, setCount] = useState(0);
 
-  useEffect(function(){
-    setInterval(IncreaseCount,1000);
-  },[]);
+  useEffect(function () {
+    setInterval(IncreaseCount, 1000);
+  }, []);
 
   function IncreaseCount() {
-    setCount(count => count+1); 
+    setCount(count => count + 1);
   }
 
   return <div>
