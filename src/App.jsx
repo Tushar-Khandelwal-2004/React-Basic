@@ -131,4 +131,3 @@ export default App;
 //   )
 // }
 // export default App
->>>>>>> c88b95b (Implemented Context API using providers)
