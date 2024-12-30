@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "week-9-react",
+=======
+  "name": "week-10-routing",
+>>>>>>> c88b95b (Implemented Context API using providers)
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +15,12 @@
   },
   "dependencies": {
     "react": "^18.3.1",
+<<<<<<< HEAD
     "react-dom": "^18.3.1"
+=======
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.1.1"
+>>>>>>> c88b95b (Implemented Context API using providers)
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
