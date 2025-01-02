@@ -1,20 +1,16 @@
 import { useState } from "react"
 import { useCounter } from "./hooks/useCounter";
 import { useFetch } from "./hooks/useFetch";
+import { usePrev } from "./hooks/usePrev";
 
 function App() {
   const [count,setCount]=useState(1);
-  const {loading ,data}=useFetch("https://jsonplaceholder.typicode.com/posts/"+count);
-  if(loading){
-    return <div>Loading...</div>
-  }
-  return (
+  const prev=usePrev(count);
+  return(
     <div>
-      <button onClick={()=>setCount(1)}>1</button>
-      <button onClick={()=>setCount(2)}>2</button>
-      <button onClick={()=>setCount(3)}>3</button>
-      <button onClick={()=>setCount(4)}>4</button>
-      {data.title}
+      <p>The current value is {count}</p>
+      <button onClick={()=>{setCount(c=>c+1)}}>Increase</button>
+      <p>The previous value was {prev}</p>
     </div>
   )
 }
