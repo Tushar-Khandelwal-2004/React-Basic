@@ -2,15 +2,17 @@ import { useState } from "react"
 import { useCounter } from "./hooks/useCounter";
 import { useFetch } from "./hooks/useFetch";
 import { usePrev } from "./hooks/usePrev";
+import { useDebounce } from "./hooks/useDebounce";
 
 function App() {
-  const [count,setCount]=useState(1);
-  const prev=usePrev(count);
-  return(
+  function sendDatatobackend() {
+    fetch("api.amazon.com/search")
+  }
+  const debouncedfn = useDebounce(sendDatatobackend, 200);
+  return (
     <div>
-      <p>The current value is {count}</p>
-      <button onClick={()=>{setCount(c=>c+1)}}>Increase</button>
-      <p>The previous value was {prev}</p>
+      <input type="text" name="" id="" onChange={debouncedfn} />
+
     </div>
   )
 }
